@@ -2,3 +2,4 @@
 .vscode/
 .idea/
 Icon
+__pycache__
