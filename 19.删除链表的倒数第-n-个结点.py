@@ -19,6 +19,20 @@ class Solution(object):
         :rtype: ListNode
         """
         self.next = head
+        right = self
+        for _ in range(n):
+            right = right.next
+
+        left = self
+        while right.next:
+            right = right.next
+            left = left.next
+
+        left.next = left.next.next
+        return self.next
+    
+    def otherSolution(self, head, n)
+        self.next = head
         preNode = [self]
         length = 1
         while head:
