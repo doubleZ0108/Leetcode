@@ -16,6 +16,7 @@ class Solution(object):
         :type citations: List[int]
         :rtype: int
         """
+        # 解法2
         citations.sort(reverse=True)
         n = len(citations)
         for i in range(n):
@@ -28,6 +29,7 @@ class Solution(object):
 
 
     def otherSolution(self, citations):
+        # 解法1
         citations.sort()
         n = len(citations)
         for h in range(n, -1, -1):
