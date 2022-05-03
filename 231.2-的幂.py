@@ -8,6 +8,8 @@
 #
 # 解法2(T65% S39%): 不停的对n整除2，如果n始终对2取余为0，则是2的幂次方，否则不是
 #   改进1(T85% S33%): 用位运算和移位运算替换取余和除法
+# 
+# 解法3(T65% S66%): 幂运算，对于是2的幂次的数，其二进制一定只有最高位是1，其他均为0
 
 # @lc code=start
 class Solution(object):
@@ -22,6 +24,9 @@ class Solution(object):
 
 
     def otherSolution(self, n):
+        # 解法3
+        return n>0 and not (n & (n-1))
+
         # 解法2
         if n <= 0: return False
 
