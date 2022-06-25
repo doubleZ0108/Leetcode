@@ -5,6 +5,8 @@
 #
 # 解法1(T15% S87%): 首先建立每个字符的整数权重字典，逐位扫描，先看如果能跟后一个数特殊匹配，则减去当前数继续循环，否则普普通通加上该数
 #   改进(T72% S98%)：将特殊的6个配对也加入字典中，用字符串切片看跟后一个数的组合在不在字典中，如果在直接跳过两位
+# 
+# 解法2(T57% S70%): 逆序当作栈来做，不断出栈，如果出完大的又出了个小的，再减掉这个小的就好了
 
 # @lc code=start
 class Solution(object):
@@ -31,6 +33,22 @@ class Solution(object):
         return result
 
     def otherSolution(self, s):
+        # 解法2
+        res = 0
+        stack = []
+        last = 'I'
+        score_table = {
+            'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000,
+        }
+        for i in range(len(s)-1, -1, -1):
+            if score_table[s[i]] < score_table[last]:
+                res -= score_table[s[i]]
+            else: 
+                res += score_table[s[i]]
+            last = s[i]
+        return res
+
+
         # 解法1
         score_table = {
             'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000,
