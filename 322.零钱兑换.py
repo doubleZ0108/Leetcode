@@ -12,30 +12,21 @@ class Solution(object):
         :type amount: int
         :rtype: int
         """
-        if len(coins) == 1:
-            if amount % coins[0] == 0:
-                return amount // coins[0]
-            else:
-                return -1
-        if amount <= 0:
-            return 0
+        if amount == 0: return 0
+        if amount in coins: return 1
+        if amount<min(coins): return -1
 
-        dp = [-1 for _ in range(amount+1)]
-        for coin in coins:
-            if coin <= amount:
-                dp[coin] = 1
-        
-        for i in range(1, amount+1):
-            if dp[i] == 1:
-                continue
-            min_count = float('inf')
-            for coin in coins:
-                if coin < i:
-                    this_count = 1 + dp[i-coin]
-                    min_count = min(min_count, this_count)
-            dp[i] = min_count
+        INF = 1e06
+        dp = [INF for _ in range(amount+1)]
+        for c in coins:
+            if c < amount: 
+                dp[c] = 1
 
-        return -1 if dp[-1]==float('inf') else dp[-1]
+        for i in range(amount+1):
+            if dp[i] == INF:
+                for coin in [c for c in coins if c<=i]:
+                    dp[i] = min(dp[i], 1+dp[i-coin])
+        return dp[i] if dp[i]!=INF else -1
 
     
     # 一直超时 不保证正确

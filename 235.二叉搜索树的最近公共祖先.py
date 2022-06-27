@@ -38,5 +38,16 @@ class Solution(object):
             elif root.val < p.val:
                 root = root.right
         
+    def otherSolution(self, root, p, q):
+        # 递归写法
+        if p.val > q.val:
+            p, q = q, p
+        
+        if root.val >= p.val and root.val <= q.val:
+            return root
+        elif root.val > p.val and root.val > q.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        else:
+            return self.lowestCommonAncestor(root.right, p, q)
 # @lc code=end
 
