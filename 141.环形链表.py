@@ -20,12 +20,12 @@ class Solution(object):
         :rtype: bool
         """
         # 解法2
-        fast, slow = head, head
-        while fast and slow and slow.next:
-            fast = fast.next
-            slow = slow.next.next
-            if fast == slow:
-                return True
+        if not head or not head.next: return False
+        slow, fast = head, head
+        while fast and fast.next and fast.next.next:
+            fast = fast.next.next
+            slow = slow.next
+            if fast==slow: return True
         return False
 
     def otherSolution(self, head):
