@@ -37,6 +37,36 @@ class MedianFinder:
         else:
             return self.maxheap[0]
 
+
+# -----------------------------------------------
+# sortedlist版更简洁的实现
+from sortedcontainers import SortedList
+
+class MedianFinder2:
+
+    def __init__(self):
+        self.left = SortedList()
+        self.right = SortedList()
+
+    def addNum(self, num: int) -> None:
+        self.left.add(num)
+        while len(self.left)>len(self.right)+1:
+            self.right.add(self.left.pop())
+        if len(self.right)>0:
+            while self.left[-1] > self.right[0]:
+                self.right.add(self.left.pop())
+                self.left.add(self.right.pop(0))
+
+    def findMedian(self) -> float:
+        if len(self.left) == len(self.right):
+            return (self.left[-1]+self.right[0]) / 2
+        elif len(self.left) > len(self.right):
+            return self.left[-1]
+        else:
+            return self.right[0]
+
+
+
 """
 # 解法1 超时
 class MedianFinder:
