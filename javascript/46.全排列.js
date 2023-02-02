@@ -13,7 +13,6 @@
  */
 var permute = function(nums) {
     var res = [];
-    var sets = new Set(nums)
     var deepin = function(parts, visited) {
         if (parts.length == nums.length) {
             res.push(parts);
