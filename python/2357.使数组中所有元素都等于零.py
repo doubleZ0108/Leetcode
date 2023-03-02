@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2357 lang=python
 #
 # [2357] 使数组中所有元素都等于零
 #

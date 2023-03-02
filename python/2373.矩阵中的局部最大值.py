@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2373 lang=python
 #
 # [2373] 矩阵中的局部最大值
 #

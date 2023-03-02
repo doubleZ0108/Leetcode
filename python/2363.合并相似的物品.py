@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2363 lang=python
 #
 # [2363] 合并相似的物品
 #

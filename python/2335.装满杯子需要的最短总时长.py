@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2335 lang=python
 #
 # [2335] 装满杯子需要的最短总时长
 #

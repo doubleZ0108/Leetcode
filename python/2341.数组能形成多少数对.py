@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2341 lang=python
 #
 # [2341] 数组能形成多少数对
 #

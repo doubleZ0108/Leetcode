@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2351 lang=python
 #
 # [2351] 第一次出现两次的字母
 #

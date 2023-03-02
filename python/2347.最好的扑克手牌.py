@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2347 lang=python
 #
 # [2347] 最好的扑克手牌
 #

@@ -1,5 +1,5 @@
 #
-# @lc app=leetcode.cn id=1154 lang=python
+# @lc app=leetcode.cn id=2319 lang=python
 #
 # [2319] 判断矩阵是否是一个X矩阵
 #
