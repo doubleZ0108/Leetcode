@@ -19,6 +19,24 @@ class Solution {
             return tmp * tmp;
         }
     }
+
+    public double myPow2(double x, long n) {
+        double res = 1.0;
+        boolean flag = false;
+        if (n < 0) {
+            flag = true;
+            n = -n;
+        }
+        while (n != 0) {
+            if (n % 2 == 1) {
+                res *= x;
+            }
+            x *= x;
+            n /= 2;
+        }
+        if (flag) { res = 1. / res; }
+        return res;
+    }
 }
 // @lc code=end
 
