@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Description: @TODO
+# @Author: doubleZ
+# @Date: 2023-11-07 17:14:53
+# @LastEditTime: 2023-11-07 17:14:53
+
 #
 # @lc app=leetcode.cn id=48 lang=python
 #
@@ -14,7 +20,7 @@ class Solution(object):
         """
         N = len(matrix)
         for loop in range(N//2):
-            for i in range(N-1):
+            for i in range(N - 2*loop -1):
                 matrix[loop][loop+i], matrix[loop+i][N-loop-1], matrix[N-loop-1][N-loop-1-i], matrix[N-loop-1-i][loop] = matrix[N-loop-1-i][loop], matrix[loop][loop+i], matrix[loop+i][N-loop-1], matrix[N-loop-1][N-loop-1-i]
 
 Solution().rotate([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,25]])
